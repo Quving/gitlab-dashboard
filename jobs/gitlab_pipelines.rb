@@ -5,7 +5,7 @@ require 'json'
 
 # TODO: Move config to yaml
 Gitlab.configure do |config|
-  config.endpoint = 'https://gitlab.com/api/v4'
+  config.endpoint = ENV["GITLAB_HOST"] + '/api/v4'
   config.private_token = ENV["GITLAB_PERSONAL_ACCESS_TOKEN"]
 end
 

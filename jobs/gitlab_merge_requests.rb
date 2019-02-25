@@ -3,7 +3,7 @@ require 'date'
 
 # TODO: Move config to yaml
 Gitlab.configure do |config|
-  config.endpoint = ENV["GITLAB_HOST"] + 'api/v4'
+  config.endpoint = ENV["GITLAB_HOST"] + '/api/v4'
   config.private_token = ENV["GITLAB_PERSONAL_ACCESS_TOKEN"]
 end
 
@@ -31,7 +31,7 @@ end
 pr_widget_data_id = 'gitlab-merge-requests'
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
-  project_name = ENV["GITLAB_group_NAME"]
+  project_name = ENV["GITLAB_GROUP_NAME"]
   open_merge_requests = get_merge_requests(project_name, "opened")
   send_event(pr_widget_data_id, {header: "Open Merge Requests", merges: open_merge_requests.first(13)})
 end
