@@ -1,0 +1,18 @@
+<h1 class="header">GitLab</h1>
+<h2 class="sub-header" data-bind="header"></h2>
+
+<ul class="listn">
+    <li data-foreach-merge="merges" class="merge">
+        <div class="merge-title" data-bind="merge.title"></div>
+        <div class="merge-info">
+            <div data-bind="merge.creator"></div>
+            <div>&nbsp;&middot;&nbsp;</div>
+            <div data-bind="merge.repo"></div>
+            <div>&nbsp;&middot;&nbsp;</div>
+            <div data-bind="merge.updated_at"></div>
+        </div>
+        <div style="clear: both;"></div>
+    </li>
+</ul>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>

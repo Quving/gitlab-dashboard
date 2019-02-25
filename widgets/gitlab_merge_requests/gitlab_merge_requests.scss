@@ -1,0 +1,67 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  teal;
+
+$heading-color:     rgba(255, 255, 255, 0.7);
+$merge-title-color: rgba(255, 255, 255, 1.0);
+$merge-info-color: rgba(255, 255, 255, 1.0);
+
+// ----------------------------------------------------------------------------
+// Widget-gitlab-merge-requests styles
+// ----------------------------------------------------------------------------
+.widget-gitlab-merge-requests {
+
+  background-color: $background-color;
+  vertical-align: top !important;
+
+  .header {
+    margin-bottom: 0;
+    font-size: xx-large;
+    color: $heading-color;
+  }
+
+  .sub-header {
+    color: $heading-color;
+    font-size: large;
+    margin-bottom: 1vh;
+  }
+
+  .merge {
+    margin-bottom: 2vh;
+  }
+
+  .merge-title {
+    font-size: medium;
+    font-weight: bold;
+    color: $merge-title-color;
+  }
+
+  .merge-info {
+    font-size: small;
+    font-style: italic;
+    color: $merge-info-color;
+  }
+
+  .merge-info div {
+    float:left;
+  }
+
+  .list {
+    list-style: none;
+  }
+
+  .updated-at {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  ol, ul {
+    margin: 0 15px;
+    text-align: left;
+  }
+
+  ol {
+    list-style-position: inside;
+  }
+
+}

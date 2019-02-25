@@ -1,0 +1,21 @@
+---
+stack: vngu/dasharama
+version: '0.0.1'
+description: dasharama
+services:
+  web:
+    image: pingu/dasharama:latest
+    instances: 1
+    ports:
+      - 3030:3030
+    links:
+      - system/lb
+    environment:
+      - KONTENA_LB_INTERNAL_PORT=3030
+      - KONTENA_LB_VIRTUAL_HOSTS=dasharama.quving.com
+      - GITLAB_HOST=https://gitlab.com
+      - GITLAB_GROUP_NAME=curilab
+    secrets:
+      - secret: GITLAB_PERSONAL_ACCESS_TOKEN
+        name: GITLAB_PERSONAL_ACCESS_TOKEN
+        type: env
