@@ -3,7 +3,7 @@ stack: vngu/dasharama
 version: '0.0.1'
 description: dasharama
 services:
-  web:
+  curiboard:
     image: pingu/dasharama:latest
     instances: 1
     ports:
@@ -12,7 +12,7 @@ services:
       - system/lb
     environment:
       - KONTENA_LB_INTERNAL_PORT=3030
-      - KONTENA_LB_VIRTUAL_HOSTS=dasharama.quving.com
+      - KONTENA_LB_VIRTUAL_HOSTS=curiboard.quving.com
       - GITLAB_HOST=https://gitlab.com
       - GITLAB_GROUP_NAME=curilab
     secrets:
