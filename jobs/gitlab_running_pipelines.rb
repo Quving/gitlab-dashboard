@@ -9,7 +9,7 @@ Gitlab.configure do |config|
   config.private_token = ENV["GITLAB_PERSONAL_ACCESS_TOKEN"]
 end
 
-def get_pipelines(group_path, state)
+def get_running_pipelines(group_path, state)
   my_group = Gitlab.groups(:search => group_path).find do |group|
     group.path == group_path
   end
@@ -32,7 +32,7 @@ end
 
 SCHEDULER.every '10s', :first_in => 0 do
   project_name = ENV["GITLAB_GROUP_NAME"]
-  group_pipelines = get_pipelines(project_name, "running")
+  group_pipelines = get_running_pipelines(project_name, "running")
 
   display = Hash.new({value: 0})
   group_pipelines.each do |pipeline|

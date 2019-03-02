@@ -2,13 +2,15 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color: teal;
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
 
-$heading-color: rgba(255, 255, 255, 0.7);
-$value-color: rgba(255, 255, 255, 0.7);
-$title-color: rgba(255, 255, 255, 0.7);
-$label-color: rgba(255, 255, 255, 0.7);
-$moreinfo-color: rgba(255, 255, 255, 0.7);
+$background-color: teal;
+$heading-color: rgba(255, 255, 255, 1);
+$sub-heading-color: rgba(255, 255, 255, 0.7);
+$value-color: rgba(255, 255, 255, 1);
+$title-color: rgba(255, 255, 255, 1);
+$label-color: rgba(255, 255, 255, 1);
+$moreinfo-color: rgba(255, 255, 255, 1);
 
 // ----------------------------------------------------------------------------
 // Widget-gitlab-merge-requests styles
@@ -18,16 +20,23 @@ $moreinfo-color: rgba(255, 255, 255, 0.7);
   background-color: $background-color;
   vertical-align: top !important;
 
+  #container {
+  }
   .header {
-    margin-bottom: 0;
+    text-align: left;
+    margin-left: 12px;
     font-size: xx-large;
     color: $heading-color;
+    margin-bottom: 0px;
+    font-weight: 900;
   }
 
   .sub-header {
-    color: $heading-color;
-    font-size: large;
-    margin-bottom: 1vh;
+    text-align: left;
+    margin-left: 12px;
+    color: $sub-heading-color;
+    font-size: x-large;
+    margin-bottom: 3vh;
   }
 
   ol, ul {
@@ -55,7 +64,7 @@ $moreinfo-color: rgba(255, 255, 255, 0.7);
   .value {
     float: right;
     margin-left: 12px;
-    font-weight: 600;
+    //font-weight: 600;
     color: $value-color;
   }
 
@@ -66,7 +75,6 @@ $moreinfo-color: rgba(255, 255, 255, 0.7);
   .more-info {
     color: $moreinfo-color;
   }
-
 
 }
 

@@ -1,11 +1,14 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  teal;
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
 
-$heading-color:     rgba(255, 255, 255, 0.7);
+$background-color: teal;
+
+$heading-color: rgba(255, 255, 255, 1);
+$sub-heading-color: rgba(255, 255, 255, 0.7);
 $merge-title-color: rgba(255, 255, 255, 1.0);
-$merge-info-color: rgba(255, 255, 255, 1.0);
+$merge-info-color: rgba(255, 255, 255, 1);
 
 // ----------------------------------------------------------------------------
 // Widget-gitlab-merge-requests styles
@@ -15,16 +18,24 @@ $merge-info-color: rgba(255, 255, 255, 1.0);
   background-color: $background-color;
   vertical-align: top !important;
 
+  #container {
+    display: flex;
+  }
+
   .header {
+    text-align: left;
+    margin-left: 12px;
     margin-bottom: 0;
     font-size: xx-large;
+    font-weight: 700;
     color: $heading-color;
   }
 
   .sub-header {
-    color: $heading-color;
-    font-size: large;
-    margin-bottom: 1vh;
+    text-align: left;
+    margin-left: 12px;
+    color: $sub-heading-color;
+    font-size: x-large;
   }
 
   .merge {
@@ -44,7 +55,7 @@ $merge-info-color: rgba(255, 255, 255, 1.0);
   }
 
   .merge-info div {
-    float:left;
+    float: left;
   }
 
   .list {

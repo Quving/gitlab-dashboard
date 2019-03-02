@@ -28,10 +28,15 @@ def get_merge_requests(group_path, state)
   open_merge_requests
 end
 
-pr_widget_data_id = 'gitlab-merge-requests'
+gmr_opened = 'gitlab-opened-merge-requests'
+gmr_closed = 'gitlab-closed-merge-requests'
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
   project_name = ENV["GITLAB_GROUP_NAME"]
   open_merge_requests = get_merge_requests(project_name, "opened")
-  send_event(pr_widget_data_id, {header: "Open Merge Requests", merges: open_merge_requests.first(13)})
+  send_event(gmr_opened, {header: "Open Merge Requests", merges: open_merge_requests.first(13)})
+
+  project_name = ENV["GITLAB_GROUP_NAME"]
+  closed_merge_requests = get_merge_requests(project_name, "closed")
+  send_event(gmr_closed, {header: "Closed Merge Requests", merges: closed_merge_requests.first(13)})
 end
