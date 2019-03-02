@@ -1,4 +1,4 @@
-class Dashing.List extends Dashing.Widget
+class Dashing.ListStyledHeader extends Dashing.Widget
   ready: ->
     if @get('unordered')
       $(@node).find('ol').remove()
