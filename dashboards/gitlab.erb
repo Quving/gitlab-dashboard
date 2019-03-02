@@ -1,6 +1,6 @@
 <script type='text/javascript'>
     $(function () {
-        Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":5,"row":1,"size_x":1,"size_y":3},{"col":4,"row":2,"size_x":1,"size_y":1}]');
+        Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":2,"size_y":1},{"col":5,"row":1,"size_x":1,"size_y":3},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1}]');
         Dashing.widget_base_dimensions = [370, 340]
         Dashing.numColumns = 5
     });
@@ -13,22 +13,45 @@
 <div class="gridster">
   <ul>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-view="Clock"></div>
+      <div
+        data-view="Clock">
+      </div>
       <i class="fa fa-clock-o icon-background"></i>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-view="Image" data-image="/logo.png"></div>
+      <div data-view="Image"
+           data-image="/logo.png"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="gitlab-pipelines" data-view="GitlabPipelines" data-unordered="true" data-title="CI-Pipelines" width="10" data-moreinfo="" style="background-color:#993366;"></div>
+      <div data-id="gitlab-pipelines"
+           data-view="GitlabPipelines"
+           data-unordered="true"
+           data-title="CI-Pipelines"
+           width="10"
+           data-moreinfo=""
+           style="background-color:#993366;"></div>
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="3">
-      <div data-id="gitlab-opened-merge-requests" data-view="GitlabMergeRequests"></div>
+      <div
+        data-id="gitlab-opened-merge-requests"
+        data-view="GitlabMergeRequests">
+      </div>
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="gitlab-closed-merge-requests" data-view="GitlabMergeRequests"></div>
+      <div
+        data-id="gitlab-closed-merge-requests"
+        data-view="GitlabMergeRequests">
+      </div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div
+        data-id="gitlab-open-issues"
+        data-view="ListStyledHeader"
+        data-title="GitLab"
+        data-subtitle="Open Issues">
+      </div>
     </li>
   </ul>
 </div>
