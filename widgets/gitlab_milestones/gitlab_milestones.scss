@@ -1,0 +1,61 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color: #12b0c5;
+$value-color: #fff;
+
+$title-color: rgba(255, 255, 255, 1);
+$subtitle-color: rgba(255, 255, 255, 0.7);
+$label-color: rgba(255, 255, 255, 1);
+$moreinfo-color: rgba(255, 255, 255, 0.7);
+
+.widget-gitlab-milestones {
+
+  background-color: $background-color;
+  vertical-align: top !important;
+
+  #container {
+    //display: flex;
+    margin-bottom: 3vh;
+  }
+
+  .title {
+    color: $title-color;
+    text-align: left;
+    margin-left: 12px;
+    font-size: xx-large;
+    margin-bottom: 0px;
+    font-weight: 900;
+  }
+
+  .subtitle {
+    text-align: left;
+    margin-left: 12px;
+    font-size: x-large;
+    color: $subtitle-color;
+  }
+
+  .milestone-issues {
+    font-size: medium;
+  }
+
+  .milestone-title {
+    font-size: xx-large;
+  }
+
+  .milestone-progress {
+    margin-bottom: 0px;
+  }
+
+  .milestone-description {
+    font-size: medium;
+  }
+
+  .milestone-due_date {
+    font-size: x-large;
+  }
+
+  .updated-at {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}

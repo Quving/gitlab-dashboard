@@ -1,0 +1,14 @@
+<div id="container">
+    <h1 class="title" data-bind="title"></h1>
+    <h1 class="subtitle" data-bind="subtitle"></h1>
+</div>
+
+<h2 class="milestone-title" data-bind="milestone_title"></h2>
+<div class="milestone-issues">
+    <span data-bind="milestone_closed_issues | prepend 'Closed Issues: '"></span>
+    <span> | </span>
+    <span data-bind="milestone_opened_issues | prepend 'Opened Issues: '"></span>
+</div>
+<h2 class="milestone-progress" data-bind="milestone_progress"></h2>
+<h1 class="milestone-due_date" data-bind="milestone_due_date"></h1>
+<p class="updated-at" data-bind="updatedAtMessage"></p>

@@ -1,6 +1,6 @@
 <script type='text/javascript'>
     $(function () {
-        Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":2,"size_y":1},{"col":5,"row":1,"size_x":1,"size_y":3},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1}]');
+        Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":2,"size_y":1},{"col":5,"row":1,"size_x":1,"size_y":3},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1}]');
         Dashing.widget_base_dimensions = [370, 340]
         Dashing.numColumns = 5
     });
@@ -42,7 +42,8 @@
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div
         data-id="gitlab-closed-merge-requests"
-        data-view="GitlabMergeRequests">
+        data-view="GitlabMergeRequests"
+        style="background-color: #ff9933;">
       </div>
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -50,7 +51,18 @@
         data-id="gitlab-open-issues"
         data-view="ListStyledHeader"
         data-title="GitLab"
-        data-subtitle="Open Issues">
+        data-subtitle="Open Issues"
+        style="background-color: #339966;">
+      </div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div
+        data-id="gitlab-milestones"
+        data-view="GitlabMilestones"
+        data-subtitle="Active Milestones"
+        data-title="GitLab"
+        style="background-color: #0099cc;">
       </div>
     </li>
   </ul>
