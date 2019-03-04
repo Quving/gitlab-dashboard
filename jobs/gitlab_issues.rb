@@ -22,12 +22,12 @@ def get_open_issues(group_path, state)
 end
 
 SCHEDULER.every '5s', :first_in => 0 do |job|
-  group_path = ENV["GITLAB_GROUP_PATH"]
+  group_path = ENV["GITLAB_GROUP_NAME"]
   open_issues = get_open_issues(group_path, "opened")
   result = Array.new
   open_issues.each do |project, issue_num|
     result.push({value: issue_num, label: project})
   end
   result = result.sort_by {|result| result.zip}.reverse
-  send_event('gitlab-open-issues', {items: result})
+  send_event('gitlab-open-issues', {items: result.first(6)})
 end
