@@ -34,9 +34,11 @@ gmr_closed = 'gitlab-closed-merge-requests'
 SCHEDULER.every '1m', :first_in => 0 do |job|
   project_name = ENV["GITLAB_GROUP_NAME"]
   open_merge_requests = get_merge_requests(project_name, "opened")
-  send_event(gmr_opened, {header: "Open Merge Requests", merges: open_merge_requests.first(13)})
+  send_event(gmr_opened, {header: "Open Merge Requests", merges: open_merge_requests.first(8)})
 
   project_name = ENV["GITLAB_GROUP_NAME"]
+  merged_merge_requests = get_merge_requests(project_name, "merged")
   closed_merge_requests = get_merge_requests(project_name, "closed")
-  send_event(gmr_closed, {header: "Closed Merge Requests", merges: closed_merge_requests.first(13)})
+  closed_merged_merge_requests = merged_merge_requests + closed_merge_requests
+  send_event(gmr_closed, {header: "Merged Merge Requests", merges: closed_merged_merge_requests.first(8)})
 end
