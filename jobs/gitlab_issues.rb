@@ -22,7 +22,8 @@ def get_open_issues(group_path, state)
 end
 
 SCHEDULER.every '5s', :first_in => 0 do |job|
-  open_issues = get_open_issues("curilab", "opened")
+  group_path = ENV["GITLAB_GROUP_PATH"]
+  open_issues = get_open_issues(group_path, "opened")
   result = Array.new
   open_issues.each do |project, issue_num|
     result.push({value: issue_num, label: project})
