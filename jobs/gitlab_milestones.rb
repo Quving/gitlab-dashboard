@@ -16,7 +16,7 @@ def get_milestones(group_path, state, project_name)
     {:id => proj['id'], :name => proj['name']}
   end
 
-  open_merge_requests = projects.inject([]) {|merges, proj|
+  project_milestones = projects.inject([]) {|merges, proj|
     Gitlab.milestones(proj[:id]).each do |milestone|
       milestone_issues = Gitlab.milestone_issues(proj[:id], milestone.id)
       opened_issues = milestone_issues.count {|x| x.state.eql? "opened"}
@@ -31,7 +31,7 @@ def get_milestones(group_path, state, project_name)
     end
     merges
   }
-  open_merge_requests
+  project_milestones
 end
 
 
@@ -47,13 +47,13 @@ SCHEDULER.every '5s', :first_in => 0 do |job|
         title: "No Milestones found",
         description: "Chuck Norris",
         due_date: "Mar 10 1942",
-        progress: "-",
+        progress: 42,
         opened_issues: 0,
         closed_issues: 0,
     }
   end
   send_event('gitlab-milestones', {
-      milestone_title: milestone[:title][0,12],
+      milestone_title: milestone[:title][0, 12],
       milestone_description: milestone[:description],
       milestone_due_date: milestone[:due_date],
       milestone_progress: "%d %%" % [milestone[:progress]],
