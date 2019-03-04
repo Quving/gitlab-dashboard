@@ -42,8 +42,18 @@ SCHEDULER.every '5s', :first_in => 0 do |job|
   milestones = get_milestones(group_path, "opened", milestone_from_project)
   milestones = milestones.sort_by {|a| a[:due_date]}
   milestone = milestones.first
+  if milestone.nil?
+    milestone = {
+        title: "No Milestones found",
+        description: "Chuck Norris",
+        due_date: "Mar 10 1942",
+        progress: "-",
+        opened_issues: 0,
+        closed_issues: 0,
+    }
+  end
   send_event('gitlab-milestones', {
-      milestone_title: milestone[:title],
+      milestone_title: milestone[:title][0,12],
       milestone_description: milestone[:description],
       milestone_due_date: milestone[:due_date],
       milestone_progress: "%d %%" % [milestone[:progress]],
